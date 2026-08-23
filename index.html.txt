@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADMs Operations Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Chart.js CDN for visual charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="dashboard-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <h2>FFT Operations</h2>
+      <nav>
+        <a href="#main" class="nav-item active">Main Overview</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header>
+        <h1>ADMs & Operations Dashboard</h1>
+      </header>
+
+      <!-- KPI Summary Cards -->
+      <section class="kpi-grid">
+        <div class="card">
+          <h3>Total ADM Count</h3>
+          <p id="kpi-count">Loading...</p>
+        </div>
+        <div class="card">
+          <h3>Total ADM Amount</h3>
+          <p id="kpi-amount">Loading...</p>
+        </div>
+        <div class="card">
+          <h3>ACMs Issued</h3>
+          <p id="kpi-acms">Loading...</p>
+        </div>
+      </section>
+
+      <!-- Charts Grid -->
+      <section class="charts-grid">
+        <div class="card">
+          <h3>ADMs Status</h3>
+          <canvas id="statusChart"></canvas>
+        </div>
+        <div class="card">
+          <h3>ADMs Reasons</h3>
+          <canvas id="reasonsChart"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

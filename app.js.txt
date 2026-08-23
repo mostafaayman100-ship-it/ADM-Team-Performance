@@ -1,0 +1,37 @@
+// Render Chart Visualizations
+function initCharts() {
+  // Status Donut Chart
+  const ctxStatus = document.getElementById('statusChart').getContext('2d');
+  new Chart(ctxStatus, {
+    type: 'doughnut',
+    data: {
+      labels: ['Pending', 'Disputed', 'Paid'],
+      datasets: [{
+        data: [40, 25, 35],
+        backgroundColor: ['#f59e0b', '#ef4444', '#10b981']
+      }]
+    },
+    options: { plugins: { legend: { labels: { color: '#f8fafc' } } } }
+  });
+
+  // Reasons Pie Chart
+  const ctxReasons = document.getElementById('reasonsChart').getContext('2d');
+  new Chart(ctxReasons, {
+    type: 'pie',
+    data: {
+      labels: ['Fare Difference', 'Reissue Error', 'Baggage'],
+      datasets: [{
+        data: [50, 30, 20],
+        backgroundColor: ['#3b82f6', '#8b5cf6', '#ec4899']
+      }]
+    },
+    options: { plugins: { legend: { labels: { color: '#f8fafc' } } } }
+  });
+
+  // Update Mock KPI metrics
+  document.getElementById('kpi-count').innerText = "142";
+  document.getElementById('kpi-amount').innerText = "$28,450";
+  document.getElementById('kpi-acms').innerText = "19";
+}
+
+document.addEventListener('DOMContentLoaded', initCharts);
